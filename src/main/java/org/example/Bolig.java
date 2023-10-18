@@ -38,6 +38,23 @@ public class Bolig {
         return aktivbud;
     }
 
+    public Bud hentHoyesteAktiveBud(){
+        List<Bud> aktiveBud = hentAktiveBudSortertEtterFristen();
+
+        if (!aktiveBud.isEmpty()){
+            Bud hoyesteBud = aktiveBud.get(0);
+            for (var i = 0; i < aktiveBud.size(); i++){
+                Bud temp = aktiveBud.get(i);
+                if (hoyesteBud.getBelop() < temp.getBelop()){
+                    hoyesteBud = temp;
+                }
+            }
+            return hoyesteBud;
+        }else {
+            return null;
+        }
+    }
+
     public void leggTilBud(Bud bud){
         budList.add(bud);
     }
