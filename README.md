@@ -17,7 +17,7 @@ Funksjonalitetskrav 2: Budgivning
 
 - [x] Lag en metode i budgiver-klassen som oppretter et bud fra budgiveren. Ta imot boligen, budpris samt timer og minutter til akseptfrist som parametere. Forsikre om at budet lagres i bolig-objektet 
 - [x] Lag en metode for å akseptere et bud som vinnerbud. Budet som godtas må være registrert i boligklassen og akseptfristen kan ikke ha gått ut. 
-- [ ] Implementer en string-representasjon av bolig-objekter. Stringen skal inneholde adressen til boligen, takstpris samt informasjon om salgsprosessen. Dersom boligen ikke er solgt skal alle aktive bud sortert på akseptfrist vises. Dersom boligen er solgt skal kjøper og salgssum vises. 
+- [x] Implementer en string-representasjon av bolig-objekter. Stringen skal inneholde adressen til boligen, takstpris samt informasjon om salgsprosessen. Dersom boligen ikke er solgt skal alle aktive bud sortert på akseptfrist vises. Dersom boligen er solgt skal kjøper og salgssum vises. 
 
 
 

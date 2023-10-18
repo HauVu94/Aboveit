@@ -1,9 +1,6 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class Bolig {
     //fields
@@ -63,6 +60,33 @@ public class Bolig {
         return false;
     }
 
+    public String toString(){
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Adresse: ").append(gateAdresse).append("\n");
+        stringBuilder.append("Postnummer: ").append(postNummer).append("\n");
+        stringBuilder.append("Taktpris: ").append(takstPris).append("\n");
+        stringBuilder.append("Salgsproses: \n");
+
+        if (vinnerBud == null){
+            stringBuilder.append("Bolig er ikke solgt. \n");
+
+            List<Bud> aktivBud = hentAktiveBudSortertEtterFristen();
+            if (!aktivBud.isEmpty()){
+                stringBuilder.append("Aktiv Bud (Sotert etter akseptfrist) \n");
+                for (Bud bud : aktivBud){
+                    stringBuilder.append("Budgiver: ").append(bud.getBudgiver().getNavn())
+                            .append(", Bud:").append(bud.getBelop()).append(" NOK, Akseptfrist: ")
+                            .append(new Date(bud.getAkseptfrist())).append("\n");
+                }
+            }else {
+                stringBuilder.append("Ingen akrive bud.");
+            }
+        }else {
+            stringBuilder.append("Solgt til: ").append(vinnerBud.getBudgiver().getNavn())
+                    .append(" for ").append(vinnerBud.getBelop()).append(" Nok.");
+        }
+        return stringBuilder.toString();
+    }
     public void leggTilBud(Bud bud){
         budList.add(bud);
     }
