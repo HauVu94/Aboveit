@@ -55,6 +55,14 @@ public class Bolig {
         }
     }
 
+    public boolean aksepterBud(Bud vinnerBud){
+        if (budList.contains(vinnerBud) && System.currentTimeMillis() < vinnerBud.getAkseptfrist()){
+            this.vinnerBud = vinnerBud;
+            return true;
+        }
+        return false;
+    }
+
     public void leggTilBud(Bud bud){
         budList.add(bud);
     }
