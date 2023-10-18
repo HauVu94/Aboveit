@@ -4,7 +4,7 @@ Du skal lage et program som håndterer bud på boliger som er til salgs. Program
 
 Funksjonalitetskrav 1: Registrering og uthenting
 
-- [ ] Lag en klasse for boliger, som representerer en bolig som er til salgs. Boliger skal lagres med gateadresse, postnummer og takstpris.  
+- [x] Lag en klasse for boliger, som representerer en bolig som er til salgs. Boliger skal lagres med gateadresse, postnummer og takstpris.  
 - [ ] Lag en klasse for budgivere. budgivere skal lagres med navn og telefonnummer.  
 - [ ] Lag en klasse for bud. Alle bud registreres med boligen det bys på, budgiver, og prisen som bys. I tillegg skal budet lagres med en akseptfrist, som er fristen budet kan godtas innen.  
 - [ ] Oppdater bolig-klassen slik at bud kan lagres. Bolig-klassen skal også lagre vinnerbudet når boligen blir solgt. 
