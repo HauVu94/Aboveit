@@ -1,6 +1,8 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Bolig {
@@ -21,6 +23,21 @@ public class Bolig {
     }
 
     // methods
+
+    public List<Bud> hentAktiveBudSortertEtterFristen(){
+        List<Bud> aktivbud = new ArrayList<>();
+        long tid = System.currentTimeMillis();
+
+        for (Bud bud : budList){
+            if (bud.getAkseptfrist() > tid){
+                aktivbud.add(bud);
+            }
+        }
+        Collections.sort(aktivbud, Comparator.comparing(Bud::getAkseptfrist));
+
+        return aktivbud;
+    }
+
     public void leggTilBud(Bud bud){
         budList.add(bud);
     }
